@@ -36,7 +36,6 @@ Tests are parameterized using the external JSON data
 * `Decimal` is used for calculations to avoid floating-point precision issues.
 
 * The requirements do not define fractional-share precision or a rounding policy. The automated tests therefore use a small comparison tolerance. The acceptable precision/tolerance should be defined by the product owner for a production system.
-* The automation will be executed in CI/CD.
 
 ## Tests Execution
 
