@@ -1,0 +1,34 @@
+{
+  "accounts": [
+    {
+      "account_id": "ABC",
+      "expected_trades": [
+        {
+          "symbol": "IBM",
+          "action": "BUY",
+          "shares": 66.666667
+        },
+        {
+          "symbol": "MSFT",
+          "action": "NONE",
+          "shares": 0
+        },
+        {
+          "symbol": "ORCL",
+          "action": "SELL",
+          "shares": 45.454545
+        },
+        {
+          "symbol": "AAPL",
+          "action": "NONE",
+          "shares": 0
+        },
+        {
+          "symbol": "HD",
+          "action": "NONE",
+          "shares": 0
+        }
+      ]
+    }
+  ]
+}

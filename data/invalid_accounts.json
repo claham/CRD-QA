@@ -1,0 +1,109 @@
+{
+  "invalid_accounts": [
+    {
+      "test_id": "ZERO_TOTAL_ASSETS",
+      "account": {
+        "account_id": "INVALID_001",
+        "total_assets": 0,
+        "securities": [
+          {
+            "symbol": "IBM",
+            "target_percent": 100,
+            "current_percent": 100,
+            "unit_price": 150
+          }
+        ]
+      },
+      "expected_error": "Total assets must be greater than zero"
+    },
+    {
+      "test_id": "NEGATIVE_TOTAL_ASSETS",
+      "account": {
+        "account_id": "INVALID_002",
+        "total_assets": -100000,
+        "securities": [
+          {
+            "symbol": "IBM",
+            "target_percent": 100,
+            "current_percent": 100,
+            "unit_price": 150
+          }
+        ]
+      },
+      "expected_error": "Total assets must be greater than zero"
+    },
+    {
+      "test_id": "NO_SECURITIES",
+      "account": {
+        "account_id": "INVALID_003",
+        "total_assets": 100000,
+        "securities": []
+      },
+      "expected_error": "Account must contain at least one security"
+    },
+    {
+      "test_id": "ZERO_UNIT_PRICE",
+      "account": {
+        "account_id": "INVALID_004",
+        "total_assets": 100000,
+        "securities": [
+          {
+            "symbol": "IBM",
+            "target_percent": 100,
+            "current_percent": 100,
+            "unit_price": 0
+          }
+        ]
+      },
+      "expected_error": "IBM: unit price must be greater than zero"
+    },
+    {
+      "test_id": "NEGATIVE_UNIT_PRICE",
+      "account": {
+        "account_id": "INVALID_005",
+        "total_assets": 100000,
+        "securities": [
+          {
+            "symbol": "IBM",
+            "target_percent": 100,
+            "current_percent": 100,
+            "unit_price": -150
+          }
+        ]
+      },
+      "expected_error": "IBM: unit price must be greater than zero"
+    },
+    {
+      "test_id": "TARGET_PERCENT_OVER_100",
+      "account": {
+        "account_id": "INVALID_006",
+        "total_assets": 100000,
+        "securities": [
+          {
+            "symbol": "IBM",
+            "target_percent": 110,
+            "current_percent": 100,
+            "unit_price": 150
+          }
+        ]
+      },
+      "expected_error": "IBM: target percentage must be between 0 and 100"
+    },
+    {
+      "test_id": "NEGATIVE_CURRENT_PERCENT",
+      "account": {
+        "account_id": "INVALID_007",
+        "total_assets": 100000,
+        "securities": [
+          {
+            "symbol": "IBM",
+            "target_percent": 100,
+            "current_percent": -10,
+            "unit_price": 150
+          }
+        ]
+      },
+      "expected_error": "IBM: current percentage must be between 0 and 100"
+    }
+  ]
+}
